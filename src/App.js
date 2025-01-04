@@ -4,6 +4,8 @@ import './App.css';
 const App = () => {
   const [input, setInput] = useState("");
 
+  const calculateResult = (expression) => {}
+
   return (
     <div className="calculator">
       <h1>Calculator</h1>
