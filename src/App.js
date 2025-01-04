@@ -5,7 +5,8 @@ const App = () => {
   const [input, setInput] = useState("");
 
   const calculateResult = (expression) => {
-    const operators = expression.split(/[\d.]+/).filter()
+    const operators = expression.split(/[\d.]+/).filter((op) => op);
+    const numbers = expression.
   }
 
   return (
