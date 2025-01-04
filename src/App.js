@@ -1,10 +1,20 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [input, setInput] = useState('');
+
+  const handleButtonClick = (value) => {
+
+  }
+
   return (
-    <div className="App">
-      
+    <div className="calculator">
+      <h1>Calculator</h1>
+      <div className='display'>{input || '0'}</div>
+      <div className='buttons'>
+        
+      </div>
     </div>
   );
 }
