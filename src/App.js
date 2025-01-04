@@ -2,22 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 const App = () => {
-  const [input, setInput] = useState('');
-
-  const handleButtonClick = (value) => {
-    if (value === "-") {
-      try {
-        const result = eval(input)
-        setInput(result.toString())
-      } catch (error) {
-        setInput("Error")
-      }
-    } else if (value === "C") {
-      setInput("")
-    } else {
-      setInput(input + value)
-    }
-  }
+  const [input, setInput] = useState("");
 
   return (
     <div className="calculator">
