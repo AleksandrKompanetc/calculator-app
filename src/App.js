@@ -6,9 +6,8 @@ const App = () => {
 
   const calculateResult = (expression) => {
     try {
-      // Простая логика для обработки выражений
-      const operators = expression.split(/[\d.]+/).filter((op) => op); // Извлекаем операторы
-      const numbers = expression.split(/[-+*/]/).map(Number); // Извлекаем числа
+      const operators = expression.split(/[\d.]+/).filter((op) => op);
+      const numbers = expression.split(/[-+*/]/).map(Number);
       
       if (numbers.length === 0 || operators.length === 0) {
         throw new Error("Invalid expression");
@@ -35,9 +34,9 @@ const App = () => {
       const result = calculateResult(input);
       setInput(result.toString());
     } else if (value === "C") {
-      setInput(""); // Очистить ввод
+      setInput("");
     } else {
-      setInput(input + value); // Добавить символ к текущему вводу
+      setInput(input + value);
     }
   };
 
