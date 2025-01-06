@@ -5,8 +5,20 @@ const App = () => {
   const [input, setInput] = useState("");
 
   const calculateResult = (expression) => {
+    try {
     const operators = expression.split(/[\d.]+/).filter((op) => op);
     const numbers = expression.split(/[-+*/]/).map(Number);
+
+    if(numbers.length === 0 || operators.length === 0) {
+      throw new Error('Invalid expression')
+    }
+
+    let result = numbers[0];
+    for(let i = 0; i < operators.length; i++) {
+      const operator = operators[i];
+      const nextNumber = numbers[i + 1];
+      if(operator === "+") result += nextNumber;
+    }
   }
 
   return (
