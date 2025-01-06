@@ -6,7 +6,7 @@ const App = () => {
 
   const calculateResult = (expression) => {
     const operators = expression.split(/[\d.]+/).filter((op) => op);
-    const numbers = expression.
+    const numbers = expression.split(/[-+*/]/).map(Number);
   }
 
   return (
