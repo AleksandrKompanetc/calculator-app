@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 const App = () => {
@@ -39,6 +39,24 @@ const App = () => {
       setInput(input + value);
     }
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ("0123456789+-*/.".includes(e.key)) {
+        setInput((prev) => prev + e.key);
+      } else if (e.key === "Enter") {
+        const result = calculateResult(input);
+        setInput(result.toString());
+      } else if (e.key === "Backspace") {
+        setInput((prev) => prev.slice(0, -1));
+      } else if (e.key === "Escape") {
+        setInput("");
+      }
+    };
+  
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [input]);
 
   return (
     <div className="calculator">
